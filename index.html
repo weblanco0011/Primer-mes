@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica de la página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título que aparecerá en la pestaña del navegador -->
+    <title>Feliz Primer Mes, Mi Amor</title>
+    
+    <!-- Enlace a tu hoja de estilos CSS. Esta única hoja dará estilo a todas tus páginas. -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Enlace a las fuentes de Google para un diseño más elegante -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- PERSONAJES FLOTANTES -->
+    <img src="assets/imagenes/lotso.png" id="lotso-animado" class="personaje-animado" alt="Lotso">
+    <img src="assets/imagenes/marie.png" id="marie-animada" class="personaje-animado" alt="Marie">
+    <!-- FIN DE PERSONAJES FLOTANTES -->
+    <!-- ======================= CONTROL DE MÚSICA DE FONDO ======================= -->
+    <!-- IMPORTANTE: Asegúrate de que el nombre 'banda-sonora.mp3' coincida con el de tu archivo en la carpeta /assets/audio/ -->
+    <audio id="banda-sonora" src="assets/audio/banda-sonora.mp3" loop></audio>
+    <button id="control-musica">🎵</button>
+
+    <!-- Este div envuelve todo el contenido para asegurar que se vea bien centrado en la pantalla -->
+    <div class="content-wrapper">
+
+        <!-- ======================= PORTADA Y MENÚ PRINCIPAL ======================= -->
+        <header id="portada" class="seccion">
+            
+            <!-- ¡PERSONALIZA AQUÍ! Cambia "Mi Cielo" por el apodo cariñoso que le dices a tu novia -->
+            <h1>Feliz Primer Mes, Mi Cielo</h1>
+            
+            <p class="subtitulo">Una pequeña sorpresa para el comienzo de nuestra increíble historia...</p>
+            
+            <!-- La cuenta regresiva que configuramos en script.js para el domingo 31 de agosto -->
+            <div id="countdown">
+                <h2>Cuenta Regresiva Para volver a vernos amor:</h2>
+                <div id="timer"></div>
+            </div>
+
+            <!-- MENÚ DE NAVEGACIÓN CON ENLACES A LAS OTRAS PÁGINAS -->
+            <nav id="menu-principal">
+                <p>Elige qué quieres ver primero:</p>
+                
+                <!-- Cada botón es un enlace que la llevará a una página completamente nueva -->
+                <a href="linea-de-tiempo.html" class="menu-btn">Nuestra Línea de Tiempo</a>
+                <a href="galeria.html" class="menu-btn">Un Rincón Para Ti</a>
+                <a href="cosas-que-amo.html" class="menu-btn">30 Días Descubriéndote</a>
+                <a href="juegos.html" class="menu-btn">¡Nuestra Zona de Juegos!</a>
+                <a href="carta.html" class="menu-btn">Una Carta Para Ti</a>
+            </nav>
+        </header>
+    </div>
+
+    <!-- Enlace al archivo JavaScript principal que controla la música y el contador de esta página -->
+    <script src="script.js"></script>
+
+</body>
+</html>

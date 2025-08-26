@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Nuestra Zona de Juegos!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- PERSONAJES FLOTANTES -->
+    <img src="assets/imagenes/lotso.png" id="lotso-animado" class="personaje-animado" alt="Lotso">
+    <img src="assets/imagenes/marie.png" id="marie-animada" class="personaje-animado" alt="Marie">
+    <!-- FIN DE PERSONAJES FLOTANTES -->
+    <audio id="banda-sonora" src="assets/audio/banda-sonora.mp3" loop></audio>
+    <button id="control-musica">🎵</button>
+
+    <div class="content-wrapper">
+        <section id="juegos" class="seccion">
+            <a href="index.html" class="btn-volver">← Volver al Menú</a>
+            <h2>¡Nuestra Zona de Juegos!</h2>
+            <p class="subtitulo-seccion">Porque nuestro amor también es divertido. ¡Ponte a prueba!</p>
+            
+            <!-- JUEGO 1: QUIZ -->
+            <div class="juego-contenedor">
+                <h3>Juego 1: El Quiz de Nuestro Primer Mes</h3>
+                <p>¿Qué tan bien recuerdas nuestros momentos? ¡Vamos a ver!</p>
+                <button id="btn-iniciar-quiz" onclick="iniciarQuiz()">¡Empezar Quiz!</button>
+                <div id="quiz-container" class="game-content-area hidden"></div>
+            </div>
+
+            <!-- JUEGO 2: MEMORAMA -->
+            <div class="juego-contenedor">
+                <h3>Juego 2: Memorama de Tus Momentos</h3>
+                <p>Encuentra los pares de tus mejores fotos. ¡A ejercitar la memoria!</p>
+                <button id="btn-iniciar-memorama" onclick="iniciarMemorama()">¡Jugar Memorama!</button>
+                
+                <!-- LÍNEA CORREGIDA ABAJO: Se añadió la clase "grid-memorama" -->
+                <div id="memorama-container" class="game-content-area grid-memorama hidden"></div>
+                
+            </div>
+            
+            <!-- JUEGO 3: ADIVINA LA CANCIÓN -->
+            <div class="juego-contenedor">
+                <h3>Juego 3: Adivina Nuestra Canción</h3>
+                <p>Escucha los clips y adivina qué canción es. ¡Cada una guarda un recuerdo!</p>
+                <button id="btn-iniciar-adivina" onclick="iniciarAdivinaCancion()">¡Comenzar a Adivinar!</button>
+                <div id="adivina-cancion-container" class="game-content-area hidden"></div>
+            </div>
+
+            <!-- JUEGO 4: SOPA DE LETRAS -->
+            <div class="juego-contenedor">
+                <h3>Juego 4: Sopa de Letras de Nuestro Amor</h3>
+                <p>Encuentra las palabras que definen nuestro primer mes. ¡Busca en todas las direcciones!</p>
+                <button id="btn-iniciar-sopa" onclick="iniciarSopaDeLetras()">¡Buscar Palabras!</button>
+                <div id="sopa-letras-container" class="game-content-area hidden"></div>
+            </div>
+
+            <!-- JUEGO 5: LABERINTO -->
+            <div class="juego-contenedor">
+                <h3>Juego 5: El Laberinto Hacia Nuestro Encuentro</h3>
+                <p>Guíame a través de los obstáculos hasta llegar a ti. ¡Usa las flechas del teclado!</p>
+                <button id="btn-iniciar-laberinto" onclick="iniciarLaberinto()">¡Comenzar el Viaje!</button>
+                <div id="laberinto-container-wrapper" class="game-content-area hidden"></div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="script.js"></script>
+    <script src="juegos/quiz.js"></script>
+    <script src="juegos/memorama.js"></script>
+    <script src="juegos/adivina-cancion.js"></script>
+    <script src="juegos/sopa-letras.js"></script>
+    <script src="juegos/laberinto.js"></script>
+</body>
+</html>

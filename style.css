@@ -1,0 +1,488 @@
+/* ===================================================================
+   HOJA DE ESTILOS PRINCIPAL - TEMA ROSADO PASTEL
+   
+   ÍNDICE:
+   1. Variables Globales (Paleta de Colores)
+   2. Estilos Generales y Tipografía
+   3. Layout y Clases de Utilidad
+   4. Componentes Reutilizables (Botones, etc.)
+   5. Estilos por Sección de Página
+   6. Zona de Juegos (Agrupado por Juego)
+   7. Efectos Especiales (Personajes Flotantes)
+=================================================================== */
+
+/* ===================================================================
+   1. VARIABLES GLOBALES (PALETA DE COLORES)
+=================================================================== */
+:root {
+    --bg-main: #FADADD;
+    --bg-container: #FFF8F9;
+    --text-main: #4B4453;
+    --accent-main: #8A4D76;
+    --accent-hover: #A3628D;
+    --accent-secondary: #D4AF37;
+    --text-subtle: #726A7B;
+    --ui-light: #BDB5C2;
+}
+
+/* ===================================================================
+   2. ESTILOS GENERALES Y TIPOGRAFÍA
+=================================================================== */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--accent-main);
+}
+
+/* ===================================================================
+   3. LAYOUT Y CLASES DE UTILIDAD
+=================================================================== */
+.content-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
+
+.seccion {
+    padding: 40px 20px;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* ===================================================================
+   4. COMPONENTES REUTILIZABLES (BOTONES, ETC.)
+=================================================================== */
+button {
+    background-color: var(--accent-main);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+#control-musica {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--bg-container);
+    color: var(--accent-main);
+    border: 2px solid var(--accent-main);
+    border-radius: 50%;
+    font-size: 24px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(75, 68, 83, 0.2);
+}
+
+#control-musica:hover {
+    background-color: var(--accent-main);
+    color: white;
+    transform: scale(1.1);
+}
+
+.menu-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--accent-main);
+    margin: 8px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    background-color: transparent;
+    border: 2px solid var(--accent-main);
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-btn:hover {
+    background-color: var(--accent-main);
+    color: white;
+}
+
+.btn-volver {
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 40px;
+    background-color: var(--ui-light);
+    color: var(--text-main);
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.btn-volver:hover {
+    background-color: #A39EAA;
+}
+
+.btn-cerrar-juego {
+    background-color: var(--ui-light);
+    color: var(--text-main);
+    margin-top: 20px;
+    padding: 8px 18px;
+    font-size: 0.9rem;
+}
+
+/* ===================================================================
+   5. ESTILOS POR SECCIÓN DE PÁGINA
+=================================================================== */
+
+/* --- 5.1 Portada y Menú Principal (index.html) --- */
+#portada {
+    background: linear-gradient(rgba(255, 248, 249, 0.7), rgba(250, 218, 221, 0.8)), url('assets/imagenes/fondo-portada.jpg') no-repeat center center/cover;
+}
+
+#portada h1 {
+    font-size: 4rem;
+    color: var(--text-main);
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5);
+}
+
+#portada .subtitulo {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--text-main);
+}
+
+#countdown {
+    margin-top: 20px;
+    background: rgba(255, 248, 249, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(138, 77, 118, 0.2);
+}
+
+#timer {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--accent-main);
+}
+
+#menu-principal {
+    margin-top: 40px;
+    border-top: 1px solid rgba(138, 77, 118, 0.3);
+    padding-top: 30px;
+}
+
+#menu-principal p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* --- 5.2 Contenido de Páginas Interiores --- */
+.subtitulo-seccion {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--text-subtle);
+    margin-top: -20px;
+}
+
+.hito {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: var(--bg-container);
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(75, 68, 83, 0.1);
+}
+
+.hito-icono {
+    font-size: 2.5rem;
+    background-color: var(--bg-main);
+    padding: 15px;
+    border-radius: 50%;
+    line-height: 1;
+}
+
+.hito-contenido {
+    flex: 1;
+}
+
+.hito-contenido h3 {
+    margin-top: 0;
+}
+
+.frase-clave {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--accent-main);
+    border-left: 3px solid var(--accent-main);
+    padding-left: 15px;
+    margin: 15px 0;
+}
+
+.captura-chat {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.foto-item img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(75, 68, 83, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.foto-item img:hover {
+    transform: scale(1.05);
+}
+
+.pie-de-foto {
+    margin-top: 15px;
+    font-style: italic;
+    color: var(--text-subtle);
+}
+
+#cosas-que-amo ul {
+    list-style: none;
+    padding: 0;
+}
+
+#cosas-que-amo li {
+    background-color: var(--bg-container);
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(75, 68, 83, 0.1);
+}
+
+#cosas-que-amo li strong {
+    color: var(--accent-main);
+}
+
+/* --- 5.3 Carta Final (carta.html) --- */
+#carta-final {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+.titulo-decorativo {
+    font-size: 3rem;
+    color: var(--accent-main);
+    text-shadow: 0 0 8px rgba(138, 77, 118, 0.2);
+}
+
+.carta {
+    text-align: left;
+    line-height: 2;
+    max-width: 700px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+    background-color: var(--bg-container);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(75, 68, 83, 0.1);
+}
+
+.firma {
+    text-align: right;
+    margin-top: 40px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--accent-main);
+}
+
+/* ===================================================================
+   6. ZONA DE JUEGOS (juegos.html)
+=================================================================== */
+
+/* --- 6.1 Contenedor General de Juegos --- */
+.juego-contenedor {
+    background-color: var(--bg-container);
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(75, 68, 83, 0.1);
+}
+
+.game-content-area {
+    margin-top: 20px;
+}
+
+/* --- 6.2 Juego: Memorama --- */
+.grid-memorama {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.memorama-carta {
+    width: 60px;
+    height: 60px;
+    background-color: var(--accent-main);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.memorama-carta.girada {
+    transform: rotateY(180deg);
+}
+
+.memorama-carta .cara {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.memorama-carta .reverso {
+    transform: rotateY(180deg);
+    font-size: 35px;
+    color: white;
+}
+
+/* --- 6.3 Juego: Sopa de Letras --- */
+.sopa-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+#sopa-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 30px);
+    gap: 2px;
+    background-color: var(--ui-light);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.sopa-cell {
+    width: 30px;
+    height: 30px;
+    background-color: var(--bg-container);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s;
+}
+
+.sopa-cell.selected {
+    background-color: var(--accent-secondary);
+    color: white;
+}
+
+#sopa-palabras ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+#sopa-palabras li.found {
+    text-decoration: line-through;
+    color: var(--ui-light);
+}
+
+/* --- 6.4 Juego: Laberinto --- */
+#laberinto-container-wrapper {
+    text-align: center;
+}
+
+#laberinto-container {
+    margin: 0 auto;
+    border: 5px solid var(--ui-light);
+    width: fit-content;
+}
+
+.laberinto-fila {
+    display: flex;
+}
+
+.laberinto-celda {
+    width: 25px;
+    height: 25px;
+}
+
+.laberinto-wall {
+    background-color: var(--ui-light);
+}
+
+.laberinto-path {
+    background-color: var(--bg-container);
+}
+
+.laberinto-player {
+    background-color: var(--accent-main);
+    border-radius: 50%;
+}
+
+.laberinto-exit {
+    background-color: var(--accent-secondary);
+    border-radius: 50%;
+}
+
+#laberinto-mensaje {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #5B8C5A;
+    /* Verde para mensaje de éxito */
+    font-weight: bold;
+    min-height: 20px;
+}
+
+/* ===================================================================
+   7. EFECTOS ESPECIALES (PERSONAJES FLOTANTES)
+=================================================================== */
+.personaje-animado {
+    position: fixed;
+    width: 80px;
+    height: auto;
+    z-index: 999;
+    pointer-events: none;
+    transition: top 5s ease-in-out, left 5s ease-in-out;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
