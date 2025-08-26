@@ -12,6 +12,8 @@
     <img src="assets/imagenes/lotso.png" id="lotso-animado" class="personaje-animado" alt="Lotso">
     <img src="assets/imagenes/marie.png" id="marie-animada" class="personaje-animado" alt="Marie">
     <!-- FIN DE PERSONAJES FLOTANTES -->
+
+    <!-- MÚSICA DE FONDO -->
     <audio id="banda-sonora" src="assets/audio/banda-sonora.mp3" loop></audio>
     <button id="control-musica">🎵</button>
 
@@ -34,10 +36,8 @@
                 <h3>Juego 2: Memorama de Tus Momentos</h3>
                 <p>Encuentra los pares de tus mejores fotos. ¡A ejercitar la memoria!</p>
                 <button id="btn-iniciar-memorama" onclick="iniciarMemorama()">¡Jugar Memorama!</button>
-                
-                <!-- LÍNEA CORREGIDA ABAJO: Se añadió la clase "grid-memorama" -->
+                <!-- Se añadió la clase "grid-memorama" -->
                 <div id="memorama-container" class="game-content-area grid-memorama hidden"></div>
-                
             </div>
             
             <!-- JUEGO 3: ADIVINA LA CANCIÓN -->
@@ -61,11 +61,15 @@
                 <h3>Juego 5: El Laberinto Hacia Nuestro Encuentro</h3>
                 <p>Guíame a través de los obstáculos hasta llegar a ti. ¡Usa las flechas del teclado!</p>
                 <button id="btn-iniciar-laberinto" onclick="iniciarLaberinto()">¡Comenzar el Viaje!</button>
-                <div id="laberinto-container-wrapper" class="game-content-area hidden"></div>
+                <!-- Contenedor del laberinto -->
+                <div id="laberinto-container-wrapper" class="game-content-area hidden">
+                    <canvas id="laberinto-canvas" width="400" height="400"></canvas>
+                </div>
             </div>
         </section>
     </div>
     
+    <!-- ARCHIVOS JS -->
     <script src="script.js"></script>
     <script src="juegos/quiz.js"></script>
     <script src="juegos/memorama.js"></script>
